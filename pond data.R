@@ -1,0 +1,11 @@
+install.packages('tidyverse')
+install.packages('car')
+install.packages('emmeans')
+library(tidyverse)
+library(car)
+library(emmeans)
+Behavioural_observations <- read_csv('Behavioural_observations.csv')
+head(Behavioural_observations)
+str(Behavioural_observations)
+exploratory_plot <- ggplot(Behavioural_observations, aes(x = Barnacled, y = Distance)) + geom_point(position = position_jitter(width = 0.1)) + labs(x = 'Barnacled (yes/no)', y = 'Distance Travelled (cm)') +  theme_classic() + theme(axis.text.x = element_text(angle = 90))
+exploratory_plot
